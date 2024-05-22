@@ -113,7 +113,7 @@ public class Main {
                 do {
                     linha = rand.nextInt(3);
                     coluna = rand.nextInt(3);
-                } while (!tabuleiro.fazerJogada("(" + (linha + 1) + "," + (coluna + 1) + ")"));
+                } while (!tabuleiro.fazerJogada("(" + (linha) + "," + (coluna) + ")"));
                 tabuleiro.alternarJogador();
             }
         }
