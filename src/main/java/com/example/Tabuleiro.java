@@ -35,6 +35,14 @@ public class Tabuleiro {
         return true;
     }
 
+    public char getPosicao(int linha, int coluna) {
+        return tabuleiro[linha][coluna];
+    }
+
+    public void setPosicao(int linha, int coluna, char jogador) {
+        tabuleiro[linha][coluna] = jogador;
+    }
+
     public void alternarJogador() {
         jogadorAtual = (jogadorAtual == 'X') ? 'O' : 'X';
     }
