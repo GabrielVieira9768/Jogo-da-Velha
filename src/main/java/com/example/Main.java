@@ -18,6 +18,7 @@ public class Main {
             } else if (modoJogo.equalsIgnoreCase("1")) {
                 jogoAtivo = nivel1(input, tabuleiro);
             }
+            tabuleiro.imprimirResumo();
         }
 
         input.close();
@@ -121,6 +122,7 @@ public class Main {
     }
 
     public static boolean nivel2(Scanner input, Tabuleiro tabuleiro) {
-        
+        System.out.println("Ainda não implementado!");
+        return false;
     }
 }

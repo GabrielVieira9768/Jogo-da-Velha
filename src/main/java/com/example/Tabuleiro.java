@@ -1,8 +1,12 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Tabuleiro {
     private char[][] tabuleiro;
     private char jogadorAtual;
+    private List<String> jogadas = new ArrayList<>();
 
     public Tabuleiro(char iconeJogador) {
         tabuleiro = new char[3][3];
@@ -32,6 +36,7 @@ public class Tabuleiro {
         }
         
         tabuleiro[linha][coluna] = jogadorAtual;
+        jogadas.add("(" + linha + "," + coluna + ")");
         return true;
     }
 
@@ -89,5 +94,12 @@ public class Tabuleiro {
 
     public char getJogadorAtual() {
         return jogadorAtual;
+    }
+
+    public void imprimirResumo() {
+        System.out.println("Resumo da Partida:");
+        for (String jogada : jogadas) {
+            System.out.println(jogada);
+        }
     }
 }
