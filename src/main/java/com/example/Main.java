@@ -90,7 +90,7 @@ public class Main {
         boolean jogoAtivo = true;
         Random rand = new Random();
         int linha, coluna;
-
+    
         while (jogoAtivo) {
             tabuleiro.imprimirTabuleiro();
             System.out.println("Jogador " + tabuleiro.getJogadorAtual() + ", insira sua jogada no formato (linha, coluna): ");
@@ -105,21 +105,38 @@ public class Main {
                 tabuleiro.imprimirTabuleiro();
                 System.out.println("Jogador " + tabuleiro.getJogadorAtual() + " venceu!");
                 jogoAtivo = false;
+                break;
             } else if (tabuleiro.verificarEmpate()) {
                 tabuleiro.imprimirTabuleiro();
                 System.out.println("O jogo empatou!");
                 jogoAtivo = false;
-            } else {
-                tabuleiro.alternarJogador();
-                do {
-                    linha = rand.nextInt(3);
-                    coluna = rand.nextInt(3);
-                } while (!tabuleiro.fazerJogada("(" + (linha) + "," + (coluna) + ")"));
-                tabuleiro.alternarJogador();
+                break;
             }
+    
+            tabuleiro.alternarJogador();
+
+            do {
+                linha = rand.nextInt(3);
+                coluna = rand.nextInt(3);
+            } while (!tabuleiro.fazerJogada("(" + (linha) + "," + (coluna) + ")"));
+    
+            if (tabuleiro.verificarVitoria()) {
+                tabuleiro.imprimirTabuleiro();
+                System.out.println("Jogador " + tabuleiro.getJogadorAtual() + " venceu!");
+                jogoAtivo = false;
+                break;
+            } else if (tabuleiro.verificarEmpate()) {
+                tabuleiro.imprimirTabuleiro();
+                System.out.println("O jogo empatou!");
+                jogoAtivo = false;
+                break;
+            }
+    
+            tabuleiro.alternarJogador();
         }
+    
         return jogoAtivo;
-    }
+    }    
 
     public static boolean nivel2(Scanner input, Tabuleiro tabuleiro) {
         System.out.println("Ainda não implementado!");

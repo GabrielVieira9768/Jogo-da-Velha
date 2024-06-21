@@ -31,12 +31,12 @@ public class Tabuleiro {
         linha = Integer.parseInt(partes[0]);
         coluna = Integer.parseInt(partes[1]);
         
-        if (linha < 0 || linha > 3 || coluna < 0 || coluna > 3 || tabuleiro[linha][coluna] != ' ') {
+        if (linha < 0 || linha > 2 || coluna < 0 || coluna > 2 || tabuleiro[linha][coluna] != ' ') {
             return false;
         }
         
         tabuleiro[linha][coluna] = jogadorAtual;
-        jogadas.add("(" + linha + "," + coluna + ")");
+        jogadas.add("(" + linha + ", " + coluna + ")");
         return true;
     }
 
