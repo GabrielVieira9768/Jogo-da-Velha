@@ -1,7 +1,6 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Tabuleiro {
     private char[][] tabuleiro;
